@@ -16,11 +16,23 @@ export default defineConfig({
   },
   root: './playground',
   plugins: [vue(), UnoCSS()],
+  test: {
+    root: '.',
+    environment: 'happy-dom',
+    include: ['src/**/*.test.ts']
+  },
   pack: {
-    entry: ['src/index.ts'],
+    entry: [
+      'src/index.ts',
+      'src/element-plus/index.ts',
+      'src/arco/index.ts',
+      'src/antdv/index.ts',
+      'src/antdv-next/index.ts',
+      'src/naive-ui/index.ts'
+    ],
     platform: 'neutral',
     deps: {
-      neverBundle: ['vue']
+      neverBundle: ['vue', '@vean/ui', '@vean/theme', '@soybeanjs/colord']
     },
     clean: true,
     dts: {
