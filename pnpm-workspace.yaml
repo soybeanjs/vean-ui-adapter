@@ -7,6 +7,7 @@ overrides:
   typescript: 'catalog:'
 shamefullyHoist: true
 allowBuilds:
+  core-js: false
   esbuild: false
   vue-demi: false
 minimumReleaseAge: 0
